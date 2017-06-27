@@ -13,3 +13,4 @@ git pull https://github.com/csc-training/summerschool.git
 ## Notes
 - [x] Have fun!
 - Beware of Slenderman!
+- [X] Learn git cycle.
