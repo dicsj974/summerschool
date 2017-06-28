@@ -8,11 +8,21 @@
 #define DX 0.01
 #define DY 0.01
 
+
 int main(void)
 {
     int i, j, error_code;
     double array[NX][NY];
     double laplacian[NX][NY];
+
+// The 5.c) part, struct
+struct temp_field {
+	int nx;
+	int ny;
+	double dx*dx;
+	double dy*dy;
+	
+}
 
     // First initalize the inner values to zero
     for (i = 1; i < NX - 2; i++) {
@@ -40,8 +50,10 @@ int main(void)
 
     // Evaluate the Laplacian
     // *INDENT-OFF*
-#error Add the missing part
- 
+for (i=1; i<NX-2; i++){
+	for (j=1; j<NX-2; j++)
+		laplacian[i][j] = ((laplacian[i-1][j] - 2*laplacian[i][j] - laplacian[i+1][j])/(DX*DX)) + ((laplacian[i][j-1] - 2*laplacian[i][j] - laplacian[i][j+1])/(DY*DY));
+} 
     // *INDENT-ON*
 
     // Call the png writer routine
