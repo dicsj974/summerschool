@@ -52,7 +52,7 @@ struct temp_field {
     // *INDENT-OFF*
 for (i=1; i<NX-2; i++){
 	for (j=1; j<NX-2; j++)
-		laplacian[i][j] = ((laplacian[i-1][j] - 2*laplacian[i][j] - laplacian[i+1][j])/(DX*DX)) + ((laplacian[i][j-1] - 2*laplacian[i][j] - laplacian[i][j+1])/(DY*DY));
+		laplacian[i][j] = ((laplacian[i-1][j] - 2.0*laplacian[i][j] - laplacian[i+1][j])/(DX*DX)) + ((laplacian[i][j-1] - 2.0*laplacian[i][j] - laplacian[i][j+1])/(DY*DY));
 } 
     // *INDENT-ON*
 
