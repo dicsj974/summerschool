@@ -15,6 +15,8 @@ int omp_rank;
 }
 
 // Compile with cray: cc -h omp hello.c  -o omp
+// Compile with gcc: gcc -fopenmp -o hello hello.c
 // Run with aprun -n 4 ./omp     where n is number of threads.
 
 // Run with aprun -e OMP_NUM_THREADS=4 -n 1 -d 4 ./omp   or batch script (sisu.sh)
+   // man aprun

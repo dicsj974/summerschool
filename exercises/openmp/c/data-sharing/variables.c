@@ -1,9 +1,14 @@
 #include <stdio.h>
+#include <omp.h>
 
 int main(void)
 {
     int var1 = 1, var2 = 2;
+    int var3 = 5;
 
+
+
+#pragma omp parallel firstprivate(var1, var2) shared(var3) // private, firstprivate or shared		
     /* TODO:
      *   Test the effect of different data sharing clauses here
      */
