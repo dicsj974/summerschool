@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <omp.h>
 
 #define NX 102400
 
@@ -7,6 +8,7 @@ int main(void)
     double vecA[NX], vecB[NX], vecC[NX];
     double sum;
     int i;
+    int nom;
 
     /* Initialization of the vectors */
     for (i = 0; i < NX; i++) {
@@ -18,7 +20,12 @@ int main(void)
      *   Implement here a parallelized version of vector addition,
      *   vecC = vecA + vecB
      */
+nom = NX/6;
 
+ #pragma omp parallel for schedule(static, nom)   // schedule(static, nom)
+for (i=0; i<NX; i++){
+	vecC[i] = vecA[i] + vecB[i];
+}
     sum = 0.0;
     /* Compute the check value */
     for (i = 0; i < NX; i++) {
