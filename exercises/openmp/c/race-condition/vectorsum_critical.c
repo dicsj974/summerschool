@@ -15,16 +15,17 @@ int main(void)
     }
 
     sum = 0.0;
-#pragma omp parallel private(i, psum, sumex)
+    psum = 0.0;
+#pragma omp parallel firstprivate(psum) private(i)
 	{
 
-#pragma omp parallel for
+#pragma omp for
    		/* TODO: Parallelize computation */
     		for (i = 0; i < NX; i++) {
         		psum += vecA[i];
     		}
 #pragma omp critical(summation)
-	sum += psum;
+		sum += psum;
 
 	}	
     printf("Sum: %ld\n",sum);
